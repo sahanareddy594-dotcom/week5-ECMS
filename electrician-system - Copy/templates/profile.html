@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>ECMS</h2>
+    <a href="/">Dashboard</a>
+    <a href="/electricians">Electricians</a>
+    <a href="/jobs">Jobs</a>
+    <a href="/tasks">Tasks</a>
+    <a href="/materials">Materials</a>
+</div>
+
+<div class="main">
+    <h2>Profile</h2>
+
+    <form method="POST">
+        <input type="text" name="name"><br>
+        <input type="email" name="email"><br>
+        <input type="text" name="phone"><br>
+        <button>Update</button>
+    </form>
+</div>
+
+</body>
+</html>

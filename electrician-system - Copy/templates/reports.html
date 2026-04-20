@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reports</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <style>
+        .main {
+            margin-left: 220px;
+            padding: 20px;
+        }
+
+        /* CARDS */
+        .cards {
+            display: flex;
+            gap: 20px;
+        }
+
+        .card {
+            flex: 1;
+            padding: 20px;
+            color: white;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .blue { background: #007bff; }
+        .green { background: #28a745; }
+        .red { background: #dc3545; }
+
+        /* CHART BOX */
+        .chart-box {
+            margin-top: 30px;
+            width: 400px;
+        }
+    </style>
+
+    <!-- CHART JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+    <h2>ECMS</h2>
+    <a href="/">🏠 Dashboard</a>
+    <a href="/electricians">👷 Electricians</a>
+    <a href="/jobs">💼 Jobs</a>
+    <a href="/tasks">📋 Tasks</a>
+    <a href="/materials">🧱 Materials</a>
+    <a href="/reports">📊 Reports</a>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+    <h2>📊 Reports Dashboard</h2>
+
+    <!-- CARDS -->
+    <div class="cards">
+        <div class="card blue">
+            <h3>Total Tasks</h3>
+            <p>{{ tasks }}</p>
+        </div>
+
+        <div class="card green">
+            <h3>Completed Tasks</h3>
+            <p>{{ completed }}</p>
+        </div>
+
+        <div class="card red">
+            <h3>Total Electricians</h3>
+            <p>{{ electricians }}</p>
+        </div>
+    </div>
+
+    <!-- CHART -->
+    <div class="chart-box">
+        <canvas id="myChart"></canvas>
+    </div>
+
+</div>
+<p id="completed" style="display:none">{{ completed }}</p>
+<p id="pending" style="display:none">{{ pending }}</p>
+
+<script>
+let completed = parseInt(document.getElementById("completed").innerText);
+let pending = parseInt(document.getElementById("pending").innerText);
+
+new Chart(document.getElementById("myChart"), {
+    type: 'pie',
+    data: {
+        labels: ['Completed', 'Pending'],
+        datasets: [{
+            data: [completed, pending],
+            backgroundColor: ['green', 'orange']
+        }]
+    }
+});
+
+
+</script>
+
+</body>
+</html>

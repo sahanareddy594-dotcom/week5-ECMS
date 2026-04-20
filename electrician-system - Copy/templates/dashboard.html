@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="sidebar">
+   <h2>ECMS</h2>
+     <a href="/">🏠 Dashboard</a>
+    <a href="/electricians">👷 Electricians</a>
+    <a href="/jobs">💼 Jobs</a>
+    <a href="/tasks">📋 Tasks</a>
+    <a href="/materials">🧱 Materials</a>
+    <a href="/reports">📊 Reports</a>
+    <a href="/logout">Logout</a>
+</div>
+
+
+<div class="main">
+    <h2>Dashboard</h2>
+
+    <p><b>Electricians:</b> {{ e }}</p>
+    <p><b>Jobs:</b> {{ j }}</p>
+    <p><b>Tasks:</b> {{ t }}</p>
+</div>
+
+
+</body>
+</html>

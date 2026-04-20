@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ECMS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>ECMS</h2>
+    <a href="/dashboard">🏠 Dashboard</a>
+<a href="/electricians">👷 Electricians</a>
+<a href="/jobs">💼 Jobs</a>
+<a href="/task">📋 Tasks</a>
+<a href="/materials">🧱 Materials</a>
+<a href="/reports">📊 Reports</a>
+</div>
+
+<div class="main">
+    {% block content %}{% endblock %}
+</div>
+
+</body>
+</html>

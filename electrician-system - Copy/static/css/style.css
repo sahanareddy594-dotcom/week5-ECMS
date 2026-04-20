@@ -1,0 +1,175 @@
+body {
+    margin: 0;
+    font-family: Arial;
+    display: flex;
+}
+
+.sidebar {
+    width: 1800px;
+    background: #2c3e50;
+    color: white;
+    height: 100vh;
+    padding: 20px;
+}
+
+.sidebar a {
+    display: block;
+    color: white;
+    margin: 10px 0;
+    text-decoration: none;
+}
+
+.main {
+    padding: 20px;
+    flex: 1;
+}
+
+input, select, button {
+    margin: 5px;
+    padding: 8px;
+}
+
+table {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+    padding: 8px;
+}
+/* GENERAL */
+body {
+    font-family: Arial;
+    background: #f4f6f9;
+    margin: 0;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 200px;
+    height: 100vh;
+    background: #2c3e50;
+    position: fixed;
+    padding-top: 20px;
+}
+
+.sidebar h2 {
+    color: white;
+    text-align: center;
+}
+
+.sidebar a {
+    display: block;
+    color: white;
+    padding: 12px;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    background: #34495e;
+}
+
+/* MAIN CONTENT */
+.main {
+    margin-left: 230px;
+    padding: 20px;
+}
+
+/* TABLE */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+/* PROFILE IMAGE */
+.profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* STATUS DOTS */
+.status {
+    padding: 5px 10px;
+    border-radius: 20px;
+    color: white;
+    font-size: 12px;
+}
+
+.pending {
+    background: orange;
+}
+
+.completed {
+    background: green;
+}
+
+/* CARDS */
+.card {
+    display: inline-block;
+    width: 200px;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 10px;
+    color: white;
+}
+
+.blue { background: #3498db; }
+.green { background: #2ecc71; }
+.red { background: #e74c3c; }
+
+/* BUTTON */
+button {
+    padding: 8px 15px;
+    background: #3498db;
+    border: none;
+    color: white;
+    border-radius: 5px;
+}
+.status {
+    padding: 5px 10px;
+    border-radius: 20px;
+    color: white;
+    font-size: 12px;
+}
+
+.pending {
+    background: orange;
+}
+
+.completed {
+    background: green;
+}
+.sidebar {
+    width: 200px;   /* FIXED */
+}
+body {
+    font-family: Arial;
+}
+
+.sidebar a {
+    display: block;
+    padding: 10px;
+    color: white;
+    background: #333;
+    margin: 5px;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    background: #555;
+}
+
+.main {
+    margin-left: 200px;
+    padding: 20px;
+}

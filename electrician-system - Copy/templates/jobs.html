@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jobs</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <style>
+        .main {
+            margin-left: 220px;
+            padding: 20px;
+        }
+
+        form {
+            margin-bottom: 15px;
+        }
+
+        input, select {
+            padding: 8px;
+            margin: 5px;
+        }
+
+        button {
+            padding: 8px 12px;
+            background: green;
+            color: white;
+            border: none;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th {
+            background: #333;
+            color: white;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        tr:nth-child(even) {
+            background: #f2f2f2;
+        }
+
+        img {
+            width: 80px;
+            height: 60px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="sidebar">
+    <h2>ECMS</h2>
+    <a href="/">🏠 Dashboard</a>
+    <a href="/electricians">👷 Electricians</a>
+    <a href="/jobs">💼 Jobs</a>
+    <a href="/tasks">📋 Tasks</a>
+    <a href="/materials">🧱 Materials</a>
+    <a href="/reports">📊 Reports</a>
+</div>
+
+<div class="main">
+    <h2>Jobs</h2>
+
+    <!-- SEARCH -->
+    <form method="GET">
+        <input type="text" name="search" placeholder="Search Jobs">
+        <button>Search</button>
+    </form>
+
+    <!-- ADD JOB (FIXED) -->
+    <form method="POST" enctype="multipart/form-data">
+        <input type="text" name="title" placeholder="Title" required>
+        <input type="text" name="location" placeholder="Location" required>
+        <input type="date" name="deadline" required>
+
+        <select name="electrician" required>
+            <option value="">Select Electrician</option>
+            {% for e in electricians %}
+            <option value="{{ e.id }}">{{ e.name }}</option>
+            {% endfor %}
+        </select>
+
+        <!-- 🔥 IMPORTANT FIX -->
+        <input type="file" name="image" required>
+
+        <button>Add Job</button>
+    </form>
+
+    <!-- TABLE -->
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Location</th>
+            <th>Deadline</th>
+            <th>Electrician</th>
+            <th>Image</th>
+        </tr>
+
+        {% for j in data %}
+        <tr>
+            <td>{{ j.title }}</td>
+            <td>{{ j.location }}</td>
+            <td>{{ j.deadline }}</td>
+            <td>{{ j.ename }}</td>
+
+            <!-- SHOW IMAGE -->
+            <td>
+                {% if j.image %}
+                    <img src="{{ url_for('static', filename='uploads/' + j.image) }}">
+                {% else %}
+                    No Image
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+
+</div>
+
+</body>
+</html>
